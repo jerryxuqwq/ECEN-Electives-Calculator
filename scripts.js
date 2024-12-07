@@ -33,6 +33,15 @@ removeCourseBtn.addEventListener('click', () => {
 
 // Check entered courses against the JSON data
 checkCoursesBtn.addEventListener('click', () => {
+    UpdateInfo()
+});
+
+// add text Boxs to event 
+courseContainer.addEventListener('input',UpdateInfo)
+
+// Update requirement table and print out information
+function UpdateInfo(event) {
+     
     const courses = document.querySelectorAll('.course-input');
     const enteredCourses = Array.from(courses).map(input => input.value.trim().toUpperCase());
     const areaCounts = {};
@@ -44,11 +53,7 @@ checkCoursesBtn.addEventListener('click', () => {
 
         // Iterate over each elective area and its courses
         for (const area of courseData) {
-            
             const match = area.courses.find(course => course.courseNumber === courseNumber);
-
-
-
             if (match) {
                 if(!(addedCourseNumber.includes(courseNumber)))
                     addedCourseNumber.push(courseNumber)
@@ -66,7 +71,7 @@ checkCoursesBtn.addEventListener('click', () => {
             return found;
         console.log(addedCourseNumber)
         if (courseNumber === "")
-            return "Input Course";
+            return "";
         else
             return `${courseNumber}: Not Found`;
         
@@ -105,10 +110,4 @@ checkCoursesBtn.addEventListener('click', () => {
         let NeededCourseCount = 6- totalCourseCount;
         document.getElementById('note3').innerHTML = `Need ${NeededCourseCount} more courses`;
     }
-
-
-
-
-
-
-});
+}

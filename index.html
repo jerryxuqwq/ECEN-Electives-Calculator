@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elective Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <h1>TAMU Elective Requirement Calculator</h1>
+    <label for="year">Choose your catalog year:</label>
+    <select name="year" id="year">
+        <option value="2023">2023</option>
+    </select>
+    <br><br>
     <div id="course-container">
         <div class="container">
             <input type="text" placeholder="Enter course number" class="course-input">
@@ -27,40 +34,50 @@
         <div class="container">
             <input type="text" placeholder="Enter course number" class="course-input">
         </div>
+        <button id="add-course">Add Course</button>
+        <button id="remove-course">Remove Course</button>
+        <button id="check-courses">Check</button>
     </div>
-    
-    
-    <button id="add-course">Add Course</button>
-    <button id="remove-course">Remove Course</button>
-    <button id="check-courses">Check</button>
-    <table>
-        <tr>
-          <th>Required</th>
-          <th>fulfilled</th>
-          <th>Check</th>
-          <th>Note</th>
-        </tr>
-        <tr>
-          <td>>= 3 same area</td>
-          <td id="result1"></td>
-          <th id="check1"></td>
-          <td id="note1"></th>
-        </tr>
-        <tr>
-          <td>>= 19 credits</td>
-          <td id="result2"></td>
-          <th id="check2"></td>
-          <td id="note2"></th>
-        </tr>
-        <tr>
-            <td>>= 6 courses</td>
-            <td id="result3"></td>
-            <th id="check3"></td>
-            <td id="note3"></th>
-        </tr>
-      </table> 
-    <div id="output"></div>
+
+
+
+    <div>
+        <table>
+            <tr>
+                <th>Required</th>
+                <th>fulfilled</th>
+                <th>Check</th>
+                <th>Note</th>
+            </tr>
+            <tr>
+                <td>>= 3 same area</td>
+                <td id="result1"></td>
+                <th id="check1">
+                    </td>
+                <td id="note1">
+                    </th>
+            </tr>
+            <tr>
+                <td>>= 19 credits</td>
+                <td id="result2"></td>
+                <th id="check2">
+                    </td>
+                <td id="note2">
+                    </th>
+            </tr>
+            <tr>
+                <td>>= 6 courses</td>
+                <td id="result3"></td>
+                <th id="check3">
+                    </td>
+                <td id="note3">
+                    </th>
+            </tr>
+        </table>
+        <div id="output"></div>
+    </div>
 
     <script src="scripts.js"></script>
 </body>
+
 </html>
