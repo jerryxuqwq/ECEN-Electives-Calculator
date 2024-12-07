@@ -1,0 +1,111 @@
+[
+    {
+        "electiveArea": "Analog and Mixed Signal",
+        "courses": [
+            {"courseNumber": "ECEN 326", "courseName": "Electronic Circuits","credits": 4},
+            {"courseNumber": "ECEN 430", "courseName": "Automotive Electronics","credits": 3},
+            {"courseNumber": "ECEN 431", "courseName": "RF Circuits for Wireless Communications","credits": 3},
+            {"courseNumber": "ECEN 432", "courseName": "Data Conversion Systems and Circuits","credits": 3},
+            {"courseNumber": "ECEN 453", "courseName": "Microwave Solid-State Circuits and Systems","credits": 4},
+            {"courseNumber": "ECEN 454", "courseName": "Digital Integrated Circuit Design","credits": 3},
+            {"courseNumber": "ECEN 457", "courseName": "Operational Amplifiers","credits": 4},
+            {"courseNumber": "ECEN 458", "courseName": "Active Filter Analysis and Design","credits": 4},
+            {"courseNumber": "ECEN 471", "courseName": "Power Management Circuits and Systems","credits": 4},
+            {"courseNumber": "ECEN 474", "courseName": "VLSI Circuit Design","credits": 4  }
+        ]
+    },
+    {
+        "electiveArea": "Biomedical Imaging, Sensing and Genomic Signal Processing",
+        "courses": [
+            {"courseNumber": "ECEN 333", "courseName": "At the Interface of Engineering and Life Sciences","credits": 3},
+            {"courseNumber": "ECEN 410", "courseName": "Medical Imaging","credits": 4},
+            {"courseNumber": "ECEN 411", "courseName": "Introduction to Magnetic Resonance Imaging and Magnetic Resonance Spectroscopy","credits": 3},
+            {"courseNumber": "ECEN 412", "courseName": "Ultrasound Imaging","credits": 3},
+            {"courseNumber": "ECEN 414", "courseName": "Biosensors","credits": 3},
+            {"courseNumber": "ECEN 419", "courseName": "Genomic Signal Processing","credits": 3},
+            {"courseNumber": "ECEN 447", "courseName": "Digital Image Processing","credits": 4},
+            {"courseNumber": "ECEN 451", "courseName": "Antenna Engineering","credits": 3},
+            {"courseNumber": "ECEN 463", "courseName": "Magnetic Resonance Engineering","credits": 3}
+        ]
+    },
+    {
+        "electiveArea": "Computer Engineering and Systems",
+        "courses": [
+            {"courseNumber": "ECEN 360", "courseName": "Computational Data Science","credits": 3},
+            {"courseNumber": "ECEN 416", "courseName": "Hardware Design Verification","credits": 3},
+            {"courseNumber": "ECEN 423", "courseName": "Computer and Wireless Networks","credits": 3},
+            {"courseNumber": "ECEN 424", "courseName": "Fundamentals of Networking","credits": 3},
+            {"courseNumber": "ECEN 426", "courseName": "Security of Embedded Systems","credits": 3},
+            {"courseNumber": "ECEN 427", "courseName": "Machine Learning","credits": 3},
+            {"courseNumber": "ECEN 428", "courseName": "Field Programmable Gate Arrays Information Processing Systems","credits": 3},
+            {"courseNumber": "ECEN 434", "courseName": "Optimization for Electrical and Computer Engineering Applications","credits": 3},
+            {"courseNumber": "ECEN 446", "courseName": "Information Theory, Inference and Learning Algorithms","credits": 3},
+            {"courseNumber": "ECEN 449", "courseName": "Microprocessor System Design","credits": 3},
+            {"courseNumber": "ECEN 454", "courseName": "Digital Integrated Circuit Design","credits": 3},
+            {"courseNumber": "ECEN 468", "courseName": "Advanced Digital System Design","credits": 4},
+            {"courseNumber": "ECEN 469", "courseName": "Advanced Computer Architecture","credits": 3},
+            {"courseNumber": "ECEN 474", "courseName": "VLSI Circuit Design","credits": 4},
+            {"courseNumber": "ECEN 475", "courseName": "Introduction to VLSI Systems Design","credits": 4}
+        ]
+    },
+    {
+        "electiveArea": "Device Science and Nanotechnology",
+        "courses": [
+            {"courseNumber": "ECEN 433", "courseName": "Advanced Micromachining Technologies for the Informational Era","credits": 3},
+            {"courseNumber": "ECEN 440", "courseName": "Thin Film Technology and Device Application","credits": 3},
+            {"courseNumber": "ECEN 461", "courseName": "Electronic Noise","credits": 3},
+            {"courseNumber": "ECEN 462", "courseName": "Optical Communication Systems","credits": 3},
+            {"courseNumber": "ECEN 464", "courseName": "Optical Engineering","credits": 3},
+            {"courseNumber": "ECEN 465", "courseName": "Experimental Optics","credits": 4},
+            {"courseNumber": "ECEN 466 / CYBR 466", "courseName": "Unconditionally Secure Electronics","credits": 3},
+            {"courseNumber": "ECEN 467", "courseName": "Harnessing Solar Energy","credits": 4},
+            {"courseNumber": "ECEN 470", "courseName": "Laser Principles and Applications","credits": 3},
+            {"courseNumber": "ECEN 472", "courseName": "Microelectronic Circuit Fabrication","credits": 4},
+            {"courseNumber": "ECEN 473", "courseName": "Microelectronic Device Design","credits": 3},
+            {"courseNumber": "ECEN 477", "courseName": "Photonics: Fiber and Integrated Optics","credits": 4}
+        ]
+    },
+    {
+        "electiveArea": "Energy and Power",
+        "courses": [
+            {"courseNumber": "ECEN 415", "courseName": "Physical and Economical Operations of Sustainable Energy Systems", "credits": 3},
+            {"courseNumber": "ECEN 438", "courseName": "Power Electronics", "credits": 4},
+            {"courseNumber": "ECEN 441", "courseName": "Electronic Motor Drives", "credits": 4},
+            {"courseNumber": "ECEN 442", "courseName": "DSP Based Electromechanical Motion Control", "credits": 3},
+            {"courseNumber": "ECEN 459", "courseName": "Power System Fault Analysis and Protection", "credits": 4},
+            {"courseNumber": "ECEN 460", "courseName": "Power System Operation and Control", "credits": 4},
+            {"courseNumber": "ECEN 471", "courseName": "Power Management Circuits and Systems", "credits": 4}
+        ]
+    },
+    {
+        "electiveArea": "Electromagnetics and Microwaves",
+        "courses": [
+            {"courseNumber": "ECEN 410", "courseName": "Medical Imaging", "credits": 4},
+            {"courseNumber": "ECEN 425", "courseName": "Radio Frequency and Microwave Engineering", "credits": 3},
+            {"courseNumber": "ECEN 445", "courseName": "Applied Electromagnetic Theory", "credits": 3},
+            {"courseNumber": "ECEN 451", "courseName": "Antenna Engineering", "credits": 3},
+            {"courseNumber": "ECEN 452", "courseName": "Ultra High Frequency Techniques", "credits": 3},
+            {"courseNumber": "ECEN 453", "courseName": "Microwave Solid-State Circuits and Systems", "credits": 4},
+            {"courseNumber": "ECEN 463", "courseName": "Magnetic Resonance Engineering", "credits": 3},
+            {"courseNumber": "ECEN 480", "courseName": "RF and Microwave Wireless Systems", "credits": 3}
+        ]
+    },
+    {
+        "electiveArea": "Information Science and Learning Systems",
+        "courses": [
+            {"courseNumber": "ECEN 360 / CSCE 305 / STAT 315", "courseName": "Computational Data Science", "credits": 3},
+            {"courseNumber": "ECEN 410", "courseName": "Medical Imaging", "credits": 4},
+            {"courseNumber": "ECEN 419", "courseName": "Genomic Signal Processing", "credits": 3},
+            {"courseNumber": "ECEN 420", "courseName": "Linear Control Systems", "credits": 3},
+            {"courseNumber": "ECEN 422", "courseName": "Control Engineering and Design Methodology", "credits": 3},
+            {"courseNumber": "ECEN 424", "courseName": "Fundamentals of Networking", "credits": 3},
+            {"courseNumber": "ECEN 427 / CSCE 421 / STAT 421", "courseName": "Machine Learning", "credits": 3},
+            {"courseNumber": "ECEN 442", "courseName": "DSP Based Electromechanical Motion Control", "credits": 3},
+            {"courseNumber": "ECEN 444", "courseName": "Digital Signal Processing", "credits": 4},
+            {"courseNumber": "ECEN 446", "courseName": "Information Theory, Inference and Learning Algorithms", "credits": 3},
+            {"courseNumber": "ECEN 447", "courseName": "Digital Image Processing", "credits": 4},
+            {"courseNumber": "ECEN 448", "courseName": "Real-Time Digital Signal Processing", "credits": 3},
+            {"courseNumber": "ECEN 455", "courseName": "Digital Communications", "credits": 4}
+        ]
+    }
+]
