@@ -3,7 +3,9 @@ const addCourseBtn = document.getElementById('add-course');
 const removeCourseBtn = document.getElementById('remove-course');
 const checkCoursesBtn = document.getElementById('check-courses');
 const outputDiv = document.getElementById('output');
-
+const yearOption = document.getElementById("year")
+let requiredCourseCount = 6;
+let requiredCreidtHour = 0;
 // Load course data from JSON file
 let courseData = [];
 fetch('courses.json')
@@ -35,6 +37,28 @@ removeCourseBtn.addEventListener('click', () => {
 checkCoursesBtn.addEventListener('click', () => {
     UpdateInfo()
 });
+yearOption.addEventListener('click',()=>{
+    //console.log(yearOption.value)
+
+    if(yearOption.value == 2023)
+    {
+            requiredCreidtHour = 19;
+            requiredCourseCount = 6;
+    }
+    if(yearOption.value == 2019)
+    {
+            requiredCreidtHour = 21;
+            requiredCourseCount = 6;
+    }
+    if(yearOption.value == 2018)
+    {
+            requiredCreidtHour = 24;
+            requiredCourseCount = 7;
+    }
+    document.getElementById('Require2').innerHTML = `>= ${requiredCreidtHour} credits` ;
+    document.getElementById('Require3').innerHTML = `>= ${requiredCourseCount} courses` ;
+    UpdateInfo();
+});
 
 // add text Boxs to event 
 courseContainer.addEventListener('input',UpdateInfo)
@@ -48,6 +72,8 @@ function UpdateInfo(event) {
     let addedCourseNumber=[];
     let totalCreditHour = 0;
     let totalCourseCount = 0;
+    
+
     const matchedCourses = enteredCourses.map(courseNumber => {
         let found = null;
 
@@ -69,7 +95,7 @@ function UpdateInfo(event) {
 
         if (found)
             return found;
-        console.log(addedCourseNumber)
+        //console.log(addedCourseNumber)
         if (courseNumber === "")
             return "";
         else
@@ -83,6 +109,7 @@ function UpdateInfo(event) {
     document.getElementById('result1').innerHTML = areaCounts[areasWithThreeCourses];
     document.getElementById('result2').innerHTML = totalCreditHour;
     document.getElementById('result3').innerHTML = totalCourseCount;
+    
 
     if (areasWithThreeCourses.length > 0) {
         document.getElementById('check1').innerHTML = 'Met';
@@ -93,21 +120,21 @@ function UpdateInfo(event) {
         document.getElementById('note1').innerHTML = "select at least 3 courses from the same elective area";
     }
 
-    if (totalCreditHour >= 19) {
+    if (totalCreditHour >= requiredCreidtHour) {
         document.getElementById('check2').innerHTML = 'Met';
         document.getElementById('note2').innerHTML = '';
     } else {
         document.getElementById('check2').innerHTML = 'Not met';
-        let neededCreditHour = 19 - totalCreditHour;
+        let neededCreditHour = requiredCreidtHour - totalCreditHour;
         document.getElementById('note2').innerHTML = `Need ${neededCreditHour} more credits`;
     }
 
-    if (totalCourseCount >= 6) {
+    if (totalCourseCount >= requiredCourseCount) {
         document.getElementById('check3').innerHTML = 'Met';
         document.getElementById('note3').innerHTML = '';
     } else {
         document.getElementById('check3').innerHTML = 'Not met';
-        let NeededCourseCount = 6- totalCourseCount;
+        let NeededCourseCount = requiredCourseCount- totalCourseCount;
         document.getElementById('note3').innerHTML = `Need ${NeededCourseCount} more courses`;
     }
 }
