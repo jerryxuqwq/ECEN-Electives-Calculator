@@ -1,4 +1,22 @@
 <!DOCTYPE html>
+<!-- 
+    TAMU ECEN Elective Requirement Calculator 
+    Copyright (C) 2025  Jerry Xu
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+-->
+
 <html lang="en">
 
 <head>
@@ -9,15 +27,35 @@
 </head>
 
 <body>
-    <h1>TAMU Elective Requirement Calculator</h1>
-    <label for="year">Choose your catalog year:</label>
-    <select name="year" id="year">
-        <option value="2023">>2023</option>
-        <option value="2019">2019-2022</option>
-        <option value="2018"><2018</option>
-    </select>
-    <br><br>
-    <div id="course-container">
+    <h1>TAMU ECEN Elective Requirement Calculator</h1>
+    
+    <b>NOTE: Contact your advisor for any question. Double check with university offical document.
+    <br>THIS IS NOT A TEXAS A&M UNIVERSITY WEBSITE
+    <br>AUTHORS DISCLAIMS ANY RESPONSIBILITY FOR ANY HARM OR LIABILITY ARISING OUT OF OR RELATED TO YOUR USE OF THE WEBSITE. </b>
+    <br>
+    <br>
+    To use this calculator:
+    <ol>
+        <li>Select your catalog year, follow the step from Canvas to determine your catalog year</li>
+      
+        <li>Input your ecen course number, format "ECEN XXX"</li>
+      
+        <li>The requirement will be calculated automatically</li>
+
+      </ol>
+
+
+    <div class="form-container">
+        <label for="year">Choose your catalog year:</label>
+        <select name="year" id="year">
+            <option value="2023">2023 and later</option>
+            <option value="2019">2019-2022</option>
+            <option value="2018">2018 and earlier</option>
+        </select>
+    
+
+    <div id="form-container">
+        <div id="course-container">
         <div class="container">
             <input type="text" placeholder="Enter course number" class="course-input">
         </div>
@@ -33,54 +71,56 @@
         <div class="container">
             <input type="text" placeholder="Enter course number" class="course-input">
         </div>
-        <div class="container">
-            <input type="text" placeholder="Enter course number" class="course-input">
+            <div class="container">
+                <input type="text" placeholder="Enter course number" class="course-input">
+            </div>
+        </div>
+        
+        <div>
+            <button id="add-course">Add Course</button>
+            <button id="remove-course">Remove Course</button>
+            <button id="check-courses">Check</button>
         </div>
     </div>
-    
-    <button id="add-course">Add Course</button>
-    <button id="remove-course">Remove Course</button>
-    <button id="check-courses">Check</button>
-
-
+</div>
 
     <div>
         <table>
-            <tr>
-                <th>Required</th>
-                <th>fulfilled</th>
-                <th>Check</th>
-                <th>Note</th>
-            </tr>
-            <tr>
-                <td>>= 3 same area</td>
-                <td id="result1"></td>
-                <th id="check1">
-                    </td>
-                <td id="note1">
-                    </th>
-            </tr>
-            <tr>
-                <td id="Require2" >>= 19 credits</td>
-                <td id="result2"></td>
-                <th id="check2">
-                    </td>
-                <td id="note2">
-                    </th>
-            </tr>
-            <tr>
-                <td id="Require3">>= 6 courses</td>
-                <td id="result3"></td>
-                <th id="check3">
-                    </td>
-                <td id="note3">
-                    </th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Required</th>
+                    <th>Fulfilled</th>
+                    <th>Check</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="Require1">>= 3 same area</td>
+                    <td id="result1">0</td>
+                    <td id="check1">Not Met</td>
+                    <td id="note1">Select at least 3 courses from the same elective area</td>
+                </tr>
+                <tr>
+                    <td id="Require2">>= 21 credits</td>
+                    <td id="result2">0</td>
+                    <td id="check2">Not Met</td>
+                    <td id="note2">Need 21 more credits</td>
+                </tr>
+                <tr>
+                    <td id="Require3">>= 6 courses</td>
+                    <td id="result3">0</td>
+                    <td id="check3">Not Met</td>
+                    <td id="note3">Need 6 more courses</td>
+                </tr>
+            </tbody>
         </table>
         <div id="output"></div>
     </div>
 
     <script src="scripts.js"></script>
+    <br>
+    This calculator was made by Jerry Xu '25 as part of his ECEN department ambassador project. <br>This is Free Software under a GPLv3 license; <a href="./license.txt">click here for the license text.</a> 
 </body>
 
 </html>
