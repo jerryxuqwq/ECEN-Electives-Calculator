@@ -131,8 +131,13 @@ function UpdateInfo(event) {
     const areasWithThreeCourses = Object.keys(areaCounts).filter(area => areaCounts[area] >= 3);
 
     outputDiv.innerHTML = `<ul>${matchedCourses.map(course => `<li>${course}</li>`).join('')}</ul>`;
-
-    document.getElementById('result1').innerHTML = areaCounts[areasWithThreeCourses];
+    let count ="";
+    if (areasWithThreeCourses.length>0){
+        for(const area of areasWithThreeCourses)
+            count= count+areaCounts[area]+ "  ";
+    }
+    //document.getElementById('result1').innerHTML = areaCounts[areasWithThreeCourses[0]];
+    document.getElementById('result1').innerHTML = count;
     document.getElementById('result2').innerHTML = totalCreditHour;
     document.getElementById('result3').innerHTML = totalCourseCount;
     
