@@ -5,7 +5,7 @@ const checkCoursesBtn = document.getElementById('check-courses');
 const outputDiv = document.getElementById('output');
 const yearOption = document.getElementById("year")
 let requiredCourseCount = 6;
-let requiredCreidtHour = 0;
+let requiredCreidtHour = 19;
 // Load course data from JSON file
 let courseData = [];
 fetch('courses.json')
@@ -78,24 +78,33 @@ function UpdateInfo(event) {
         let found = null;
 
         // Iterate over each elective area and its courses
+        let appliedArea=[];
+        let appliedCredit=0;
+        let appliedCourseName="";
+        let appliedCourseNumber="";
+
         for (const area of courseData) {
             const match = area.courses.find(course => course.courseNumber === courseNumber);
             if (match) {
-                if(!(addedCourseNumber.includes(courseNumber)))
-                    addedCourseNumber.push(courseNumber)
-                else
-                    return "Repeated Course";
-                found = `${match.courseNumber}: ${match.courseName} (${match.credits} credits, ${area.electiveArea})`;
+                appliedCredit=match.credits;
+                appliedCourseName=match.courseName;
+                appliedCourseNumber=match.courseNumber;
+                appliedArea.push(area.electiveArea)
                 areaCounts[area.electiveArea] = (areaCounts[area.electiveArea] || 0) + 1;
-                totalCreditHour = totalCreditHour + match.credits;
-                totalCourseCount = totalCourseCount + 1;
-                break;
             }
         }
 
-        if (found)
+        if (appliedCourseNumber)
+            {
+            if(!(addedCourseNumber.includes(courseNumber)))
+                addedCourseNumber.push(courseNumber)
+            else
+                return "Repeated Course";
+            totalCreditHour = totalCreditHour + appliedCredit;
+            totalCourseCount = totalCourseCount + 1;
+            found = `${appliedCourseNumber}: ${appliedCourseName} (${appliedCredit} credits, ${appliedArea})`;
             return found;
-        //console.log(addedCourseNumber)
+            }
         if (courseNumber === "")
             return "";
         else
