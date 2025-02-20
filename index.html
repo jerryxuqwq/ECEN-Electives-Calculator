@@ -29,98 +29,111 @@
 <body>
     <h1>TAMU ECEN Elective Requirement Calculator</h1>
     
-    <b>NOTE: Contact your advisor for any question. Double check with university official document.
-    <br>THIS IS NOT A TEXAS A&M UNIVERSITY WEBSITE
-    <br>AUTHORS DISCLAIMS ANY RESPONSIBILITY FOR ANY HARM OR LIABILITY ARISING OUT OF OR RELATED TO YOUR USE OF THE WEBSITE. </b>
-    <br>
-    <br>
+    <b style="color:red;">This tool is intended to be used as a guide only. Schedule an appointment with an ECEN advisor to confirm that your planned courses are meeting the ECEN electives requirement.</b>
+    <b>
+
+    <div class="box">
     To use this calculator:
-    <ol>
+    <ol type="1">
         <li>Select your catalog year, follow the step from Canvas to determine your catalog year</li>
-      
         <li>Input your ecen course number, format "ECEN XXX"</li>
-      
         <li>The requirement will be calculated automatically</li>
+        <li>"Tab" and "Shift+Tab" can be used to jump between input boxes. </li>
+    </ol>
+      <label for="year">Choose your catalog year here:</label>
+      <select name="year" id="year">
+        <option value="2023">2023 and later</option>
+        <option value="2019">2019-2022</option>
+        <option value="2018">2018 and earlier</option>
+    </select>
+    </div>
 
-      </ol>
 
-
-    <div class="form-container">
-        <label for="year">Choose your catalog year:</label>
-        <select name="year" id="year">
-            <option value="2023">2023 and later</option>
-            <option value="2019">2019-2022</option>
-            <option value="2018">2018 and earlier</option>
-        </select>
-    
-
-    <div id="form-container">
-        <div id="course-container">
-        <div class="container">
-            <input type="text" placeholder="Enter course number" class="course-input">
-        </div>
-        <div class="container">
-            <input type="text" placeholder="Enter course number" class="course-input">
-        </div>
-        <div class="container">
-            <input type="text" placeholder="Enter course number" class="course-input">
-        </div>
-        <div class="container">
-            <input type="text" placeholder="Enter course number" class="course-input">
-        </div>
-        <div class="container">
-            <input type="text" placeholder="Enter course number" class="course-input">
-        </div>
-            <div class="container">
-                <input type="text" placeholder="Enter course number" class="course-input">
+        <div class="main-container">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Required</th>
+                            <th>Met</th>
+                            <th>Check</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="Require1">>= 3 same area</td>
+                            <td id="result1">0</td>
+                            <td id="check1">Not Met</td>
+                            <td id="note1">Select at least 3 courses from the same elective area</td>
+                        </tr>
+                        <tr>
+                            <td id="Require2">>= 21 credits</td>
+                            <td id="result2">0</td>
+                            <td id="check2">Not Met</td>
+                            <td id="note2">Need 21 more credits</td>
+                        </tr>
+                        <tr>
+                            <td id="Require3">>= 6 courses</td>
+                            <td id="result3">0</td>
+                            <td id="check3">Not Met</td>
+                            <td id="note3">Need 6 more courses</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="output"></div>
+            </div>
+        
+            <div class="form-container">
+        
+                <div id="form-container">
+                    <div id="course-container">
+                        <div class="container">
+                            <input type="text" placeholder="Enter course number" class="course-input">
+                        </div>
+                        <div class="container">
+                            <input type="text" placeholder="Enter course number" class="course-input">
+                        </div>
+                        <div class="container">
+                            <input type="text" placeholder="Enter course number" class="course-input">
+                        </div>
+                        <div class="container">
+                            <input type="text" placeholder="Enter course number" class="course-input">
+                        </div>
+                        <div class="container">
+                            <input type="text" placeholder="Enter course number" class="course-input">
+                        </div>
+                        <div class="container">
+                            <input type="text" placeholder="Enter course number" class="course-input">
+                        </div>
+                    </div>
+        
+                    <div>
+                        <button id="add-course">Add Course</button>
+                        <button id="remove-course">Remove Course</button>
+                        <button id="check-courses">Check</button>
+                    </div>
+                </div>
             </div>
         </div>
         
-        <div>
-            <button id="add-course">Add Course</button>
-            <button id="remove-course">Remove Course</button>
-            <button id="check-courses">Check</button>
-        </div>
-    </div>
-</div>
+	<div class="box">
+		A varying number of ECEN 489 (Special Topics) may be offered. Each course with a minimum of three credits may apply to one or more of the specialty areas, usually classified according to the professor’s research area.
+	Maximum total of 12.0 credits may be used from 489s. To determine the area your chosen section of ECEN 489 falls under, review the <a  href="https://canvas.tamu.edu/courses/257638/pages/special-topics-courses-for-elen-majors">Special Topics Courses for ELEN Majors </a> section of our Canvas page.
+	</div>
 
-    <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Required</th>
-                    <th>Fulfilled</th>
-                    <th>Check</th>
-                    <th>Note</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td id="Require1">>= 3 same area</td>
-                    <td id="result1">0</td>
-                    <td id="check1">Not Met</td>
-                    <td id="note1">Select at least 3 courses from the same elective area</td>
-                </tr>
-                <tr>
-                    <td id="Require2">>= 21 credits</td>
-                    <td id="result2">0</td>
-                    <td id="check2">Not Met</td>
-                    <td id="note2">Need 21 more credits</td>
-                </tr>
-                <tr>
-                    <td id="Require3">>= 6 courses</td>
-                    <td id="result3">0</td>
-                    <td id="check3">Not Met</td>
-                    <td id="note3">Need 6 more courses</td>
-                </tr>
-            </tbody>
-        </table>
-        <div id="output"></div>
-    </div>
+    <br>THIS IS NOT A TEXAS A&M UNIVERSITY WEBSITE
+    <br>AUTHORS DISCLAIMS ANY RESPONSIBILITY FOR ANY HARM OR LIABILITY ARISING OUT OF OR RELATED TO YOUR USE OF THE WEBSITE. </b>
+<b style="color:red;">This tool is intended to be used as a guide only. Schedule an appointment with an ECEN advisor to confirm that your planned courses are meeting the ECEN electives requirement.</b>
+This calculator was made by Jerry Xu '25 as part of his ECEN department ambassador project. 
+<br>This is Free Software under a GPLv3 license; 
+<a href="./license.txt">click here for the license text.</a> 
+<br>
+<br>
+<br>
 
-    <script src="scripts.js"></script>
-    <br>
-    This calculator was made by Jerry Xu '25 as part of his ECEN department ambassador project. <br>This is Free Software under a GPLv3 license; <a href="./license.txt">click here for the license text.</a> 
+<script src="scripts.js"></script>
+    
 </body>
 
 </html>
