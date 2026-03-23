@@ -19,6 +19,7 @@ const courseContainer = document.getElementById('course-container');
 const addCourseBtn = document.getElementById('add-course');
 const removeCourseBtn = document.getElementById('remove-course');
 const checkCoursesBtn = document.getElementById('check-courses');
+const clearBtn = document.getElementById('clear');
 const outputDiv = document.getElementById('output');
 const yearOption = document.getElementById("year")
 let requiredCourseCount = 6;
@@ -48,6 +49,13 @@ removeCourseBtn.addEventListener('click', () => {
     if (containers.length > 1) {
         courseContainer.removeChild(containers[containers.length - 1]);
     }
+});
+
+// Clear all input fields
+clearBtn.addEventListener('click', () => {
+    const inputs = document.querySelectorAll('.course-input');
+    inputs.forEach(input => input.value = '');
+    UpdateInfo();
 });
 
 // Check entered courses against the JSON data
@@ -102,10 +110,18 @@ function UpdateInfo(event) {
 
         for (const area of courseData) {
             const match = area.courses.find(course => course.courseNumber === courseNumber);
+            const match_wildcard = area.courses.find(course => course.courseNumber ===  "ECEN " + courseNumber);
             if (match) {
                 appliedCredit=match.credits;
                 appliedCourseName=match.courseName;
                 appliedCourseNumber=match.courseNumber;
+                appliedArea.push(area.electiveArea)
+                areaCounts[area.electiveArea] = (areaCounts[area.electiveArea] || 0) + 1;
+            }
+            else if (match_wildcard) {
+                appliedCredit=match_wildcard.credits;
+                appliedCourseName=match_wildcard.courseName;
+                appliedCourseNumber=match_wildcard.courseNumber;
                 appliedArea.push(area.electiveArea)
                 areaCounts[area.electiveArea] = (areaCounts[area.electiveArea] || 0) + 1;
             }
@@ -143,28 +159,28 @@ function UpdateInfo(event) {
     
 
     if (areasWithThreeCourses.length > 0) {
-        document.getElementById('check1').innerHTML = 'Met';
+        document.getElementById('check1').innerHTML = '✅ Met';
         document.getElementById('note1').innerHTML = areasWithThreeCourses;
     
     } else {
-        document.getElementById('check1').innerHTML = 'Not met';
+        document.getElementById('check1').innerHTML = '❌ Not met';
         document.getElementById('note1').innerHTML = "select at least 3 courses from the same elective area";
     }
 
     if (totalCreditHour >= requiredCreidtHour) {
-        document.getElementById('check2').innerHTML = 'Met';
+        document.getElementById('check2').innerHTML = '✅ Met';
         document.getElementById('note2').innerHTML = '';
     } else {
-        document.getElementById('check2').innerHTML = 'Not met';
+        document.getElementById('check2').innerHTML = '❌ Not met';
         let neededCreditHour = requiredCreidtHour - totalCreditHour;
         document.getElementById('note2').innerHTML = `Need ${neededCreditHour} more credits`;
     }
 
     if (totalCourseCount >= requiredCourseCount) {
-        document.getElementById('check3').innerHTML = 'Met';
+        document.getElementById('check3').innerHTML = '✅ Met';
         document.getElementById('note3').innerHTML = '';
     } else {
-        document.getElementById('check3').innerHTML = 'Not met';
+        document.getElementById('check3').innerHTML = '❌ Not met';
         let NeededCourseCount = requiredCourseCount- totalCourseCount;
         document.getElementById('note3').innerHTML = `Need ${NeededCourseCount} more courses`;
     }

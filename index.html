@@ -63,19 +63,19 @@
                         <tr>
                             <td id="Require1">>= 3 same area</td>
                             <td id="result1">0</td>
-                            <td id="check1">Not Met</td>
+                            <td id="check1">❌ Not Met</td>
                             <td id="note1">Select at least 3 courses from the same elective area</td>
                         </tr>
                         <tr>
                             <td id="Require2">>= 21 credits</td>
                             <td id="result2">0</td>
-                            <td id="check2">Not Met</td>
+                            <td id="check2">❌ Not Met</td>
                             <td id="note2">Need 21 more credits</td>
                         </tr>
                         <tr>
                             <td id="Require3">>= 6 courses</td>
                             <td id="result3">0</td>
-                            <td id="check3">Not Met</td>
+                            <td id="check3">❌ Not Met</td>
                             <td id="note3">Need 6 more courses</td>
                         </tr>
                     </tbody>
@@ -86,6 +86,13 @@
             <div class="form-container">
         
                 <div id="form-container">
+                    <div>
+                        <button id="add-course">Add Course</button>
+                        <button id="remove-course">Remove Course</button>
+                        <button id="check-courses">Check</button>
+                        <button id="clear">Clear</button>
+                    </div>
+
                     <div id="course-container">
                         <div class="container">
                             <input type="text" placeholder="Enter course number" class="course-input">
@@ -107,11 +114,7 @@
                         </div>
                     </div>
         
-                    <div>
-                        <button id="add-course">Add Course</button>
-                        <button id="remove-course">Remove Course</button>
-                        <button id="check-courses">Check</button>
-                    </div>
+
                 </div>
             </div>
         </div>
